@@ -10,7 +10,6 @@
 
 " Maintainer: Enno Nagel
 " Email:      enno.nagel+vim@gmail.com
-" License:    MIT
 
 if exists("current_compiler") | finish | endif
 let current_compiler = "lintr"
