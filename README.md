@@ -1,5 +1,5 @@
 The folder `compilers/` contains compiler files.
-Copy them into your Vim configuration folder (`~/.vim` on Linux and MacOS, `%USERPROFILE/vimfiles` on Microsoft Windows).
+Copy them into your Vim configuration folder (`~/.vim` on Linux and MacOS, `%USERPROFILE%/vimfiles` on Microsoft Windows).
 You may also use a plug-in manager such as [vim-plug](https://github.com/junegunn/vim-plug) (in this case, add `Plug konfekt/vim-compilers` to use them).
 
 # Usage and Setup
@@ -17,7 +17,7 @@ command! -buffer -bang Lint compiler flake8 | lmake<bang>
 
 It can then be called to lint the main file by `:Lint`.
 
-The location-list window that lists the compiler messages can then be opened by `:lwindow` and they can be jumped to by `:lN` respectively `:lp`.
+The location-list window that lists the compiler messages can then be opened by `:lwindow` and they can be jumped to by `:ln` respectively `:lp`.
 
 To automatically open the location-list window after linting has finished, add `autocmd QuickFixCmdPost lmake lwindow`.
 
@@ -38,7 +38,7 @@ command! -buffer -bang Compile compiler python | make<bang>.
 that can then be called to compile the main file.
 For example, if it is the one of the currently open buffer, then `:Compile %:S` suffices.
 
-The (quickfix) window that lists the compiler messages can then be opened by `:cwindow` and they can be jumped to by `:cN` respectively `:cp`.
+The (quickfix) window that lists the compiler messages can then be opened by `:cwindow` and they can be jumped to by `:cn` respectively `:cp`.
 
 To automatically open the quickfix window after compilation has finished, add `autocmd QuickFixCmdPost make cwindow`.
 
