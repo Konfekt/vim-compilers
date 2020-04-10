@@ -62,3 +62,30 @@ To run a linter or compiler in the background, use a `:Make` command (instead of
 # Signpost Locations
 
 The plug-in [vim-markify](https://github.com/dhruvasagar/vim-markify) marks all found locations by text signs at the side of the window.
+
+# Additional Compilers
+
+Vim already comes with many compiler files, see `:e $VIMRUNTIME/compiler`.
+
+Googling for `GitHub Vim compilers` yielded compiler files for
+
+- [Python](https://github.com/aliev/vim-compiler-python/), [Pytest](https://github.com/tartansandal/vim-compiler-pytest), [Flake8, pylint and mypy](https://github.com/drgarcia1986/python-compilers.vim)
+- [Go](https://github.com/rjohnsondev/vim-compiler-go)
+- [C#](https://github.com/Chiel92/vim-csharp-compiler-plugin)
+- [Bash](https://github.com/congma/vim-compiler-checkbashisms)
+- [LanguageTool](https://github.com/Konfekt/vim-langtool) ...
+
+A [search request on GitHub itself](https://github.com/search?p=2&q=current_compiler++NOT+Maintainer+extension%3Avim+path%3Acompiler%2F+language%3A%22Vim+script%22&type=Code) yields compiler files for
+
+- [minitest](https://github.com/dmcinnes/vimfiles/blob/master/compiler/minitest.vim)
+- [ESlint, Jenkins, node.vim, npm and TypeScript](https://github.com/zhoudaxia2016/vim-profile/tree/master/compiler)
+- [Gradle, JSlint, Maven, pychecker and pyflakes](https://github.com/niklasl/vimheap/tree/master/compiler)
+- [LiveScript](https://github.com/determin1st/vim-lsx/blob/master/compiler/ls.vim)
+- [Scala, Maven and JShint](https://github.com/salomvary/vimfiles/tree/master/compiler)
+- [Clang and xCodebuild](https://github.com/zokeefe/vim/tree/master/compiler)
+- [Go](https://github.com/arp242/gopher.vim/blob/master/compiler)
+- [Fish](https://github.com/dag/vim-fish/blob/master/compiler/fish.vim)
+- [Haskell Stack](https://github.com/pbrisbin/vim-compiler-stack)
+- [GnuPlot](https://github.com/gagbo/vim-gnuplot/tree/master/compiler)
+- [AutoHotKey](https://github.com/valacar/vimfiles/blob/master/compiler/autohotkey.vim) ...
+
