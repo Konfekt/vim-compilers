@@ -1,4 +1,4 @@
-The folder `compilers/` contains compiler files that set up compilers (or linters) for easy use in Vim.
+The folder `compiler/` contains compiler files that set up compilers (or linters, that is, syntax checkers) for easy use in Vim.
 Copy them into your Vim configuration folder (`~/.vim` on Linux and MacOS, `%USERPROFILE%/vimfiles` on Microsoft Windows).
 You may also use a plug-in manager such as [vim-plug](https://github.com/junegunn/vim-plug) (in this case, add `Plug 'konfekt/vim-compilers'` to your `vimrc` to use them).
 
