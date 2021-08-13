@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-setlocal makeprg=mypy\ --show-column-numbers\ %:S
+setlocal makeprg=mypy\ --show-column-numbers
 setlocal errorformat=%f:%l:%c:\ %t%*[^:]:\ %m
 
 silent CompilerSet makeprg

@@ -34,8 +34,8 @@ endif
 let s:save_cpo = &cpo
 set cpo-=C
 
-CompilerSet makeprg=shellcheck\ -f\ gcc\ %:S
-" CompilerSet makeprg=shellcheck\ -s\ bash\ -f\ gcc\ --\ %:S
+CompilerSet makeprg=shellcheck\ -f\ gcc
+" CompilerSet makeprg=shellcheck\ -s\ bash\ -f\ gcc
 
 CompilerSet errorformat=
       \%f:%l:%c:\ %trror:\ %m,

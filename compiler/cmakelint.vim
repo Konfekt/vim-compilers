@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=cmakelint\ %:S
+CompilerSet makeprg=cmakelint
 CompilerSet errorformat="%f",\ line\ %l:\ %m
 
 let &cpo = s:cpo_save

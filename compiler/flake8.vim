@@ -24,7 +24,7 @@ let &l:errorformat =
       \ '%A%f:%l: %m,' .
       \ '%-G%.%#'
 
-CompilerSet makeprg=flake8\ %:S
+CompilerSet makeprg=flake8
 silent CompilerSet errorformat
 
 let &cpo = s:cpo_save

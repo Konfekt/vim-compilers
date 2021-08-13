@@ -8,7 +8,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=lacheck\ %:S
+CompilerSet makeprg=lacheck
 CompilerSet errorformat="%f",\ line\ %l:\ %m
 
 let &cpo = s:cpo_save

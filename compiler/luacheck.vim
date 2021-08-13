@@ -14,7 +14,7 @@ if exists(':CompilerSet') != 2 " older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>
 endif
 
-CompilerSet makeprg=luacheck\ --no-color\ %:S
+CompilerSet makeprg=luacheck\ --no-color
 CompilerSet errorformat=%f:%l:%c:\ %m,%-G%.%#
 
 let &cpoptions = s:save_cpo

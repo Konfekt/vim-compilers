@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=style-check.rb\ %:S
+CompilerSet makeprg=style-check.rb
 
 setlocal errorformat=
 setlocal errorformat=%f:%l:%c:\ %m

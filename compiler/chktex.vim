@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=chktex\ --localrc\ ~/.chktexrc\ --inputfiles\ --quiet\ -v6\ %:S
+CompilerSet makeprg=chktex\ --localrc\ ~/.chktexrc\ --inputfiles\ --quiet\ -v6
 CompilerSet errorformat="%f",\ line\ %l.%c:\ %m
 
 let &cpo = s:cpo_save

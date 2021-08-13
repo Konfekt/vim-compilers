@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-let &l:makeprg = 'diction --suggest --beginner --language ' . matchstr(&l:spelllang, '^\a\a') . ' %:S'
+let &l:makeprg = 'diction --suggest --beginner --language ' . matchstr(&l:spelllang, '^\a\a')
 setlocal errorformat=
 setlocal errorformat=%f:%l:\ %m
 setlocal errorformat+=%-G%.%#

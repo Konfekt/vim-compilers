@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=biber\ --tool\ --validate-datamodel\ %:S
+CompilerSet makeprg=biber\ --tool\ --validate-datamodel
 
 setlocal errorformat=
 let &l:errorformat.="%-PINFO - Globbing data source '%f',"

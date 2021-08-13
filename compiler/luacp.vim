@@ -13,7 +13,7 @@ if exists(':CompilerSet') != 2 " older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>
 endif
 
-CompilerSet makeprg=luac\ -p\ %:S
+CompilerSet makeprg=luac\ -p
 CompilerSet errorformat=luac:\ %f:%l:\ %m,%-G%.%#
 
 let &cpoptions = s:save_cpo

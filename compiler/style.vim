@@ -39,7 +39,7 @@ if !exists('g:style_ari')
   let g:style_ari = 12
 endif
 
-let &l:makeprg = 'style --print-long ' . g:style_length . ' --print-ari ' . g:style_ari . ' --print-nom --language ' . matchstr(&l:spelllang, '^\a\a') . ' %:S'
+let &l:makeprg = 'style --print-long ' . g:style_length . ' --print-ari ' . g:style_ari . ' --print-nom --language ' . matchstr(&l:spelllang, '^\a\a')
 setlocal errorformat=
 setlocal errorformat=%f:%l:\ %m
 setlocal errorformat+=%-G%.%#

@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-setlocal makeprg=pycodestyle\ %:S
+setlocal makeprg=pycodestyle
 setlocal errorformat=%f:%l:%c:\ %t%n\ %m
 
 silent CompilerSet makeprg

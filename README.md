@@ -13,7 +13,7 @@ In one go: `:comp flake8 | lmake`.
 For convenience, define in `~/.vim/after/ftplugin/python.vim` a command
 
 ```vim
-command! -buffer -bang Lint compiler flake8 | lmake<bang>
+command! -buffer -bang Lint compiler flake8 | lmake %:S<bang>
 ```
 
 It can then be called to lint the main file by `:Lint`.

@@ -18,7 +18,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=makeprg=rubocop\ --auto-correct\ %:S
+CompilerSet makeprg=makeprg=rubocop\ --auto-correct
 CompilerSet errorformat=%f:%l:%c:\ %t:\ %m
 
 let &cpo = s:cpo_save

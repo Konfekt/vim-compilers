@@ -10,7 +10,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-silent CompilerSet makeprg=markdownlint\ %:S
+silent CompilerSet makeprg=markdownlint
 setlocal errorformat=%f:%l:%c\ MD0%n/%m
 setlocal errorformat+=%f:%l\ MD0%n/%m
 setlocal errorformat+=%-G%.%#

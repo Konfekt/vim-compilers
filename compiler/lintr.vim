@@ -32,7 +32,6 @@ set cpo&vim
 let &l:makeprg = 'Rscript --slave --no-restore --no-save -e '
   \ . shellescape('suppressPackageStartupMessages(library(lintr));'
   \ . ' lint(cache = FALSE, commandArgs(TRUE), default_linters)')
-  \ . '%:S'
 let &l:errorformat =
   \ '%W%f:%l:%c: style: %m,' .
   \ '%W%f:%l:%c: warning: %m,' .
