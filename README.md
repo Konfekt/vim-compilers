@@ -47,15 +47,17 @@ To automatically open the quickfix window after compilation has finished, add `a
 
 # Run as Jobs
 
-To run a linter or compiler in the background, use a `:Make` command (instead of `:make` or `:lmake`), such as
+To run a linter or compiler in the background, use an `:(L)Make` command (instead of `:make` or `:lmake`), such as
 
-- that of [vim-dispatch](https://github.com/tpope/vim-dispatch) or,
-- with [AsyncRun.vim](https://github.com/skywind3000/asyncrun.vim/) installed, that defined by
+- that of [tasks.vim](https://github.com/mg979/tasks.vim), or
+- that of [vim-dispatch](https://github.com/tpope/vim-dispatch), or
+- that defined by
 
     ```vim
-    command! -bang -nargs=* -complete=file -bar Make AsyncRun<bang> -auto=make -program=make
+    command! -bang -nargs=* -complete=file Make AsyncRun<bang> -auto=make -program=make -strip <args>
     ```
 
+    with [AsyncRun.vim](https://github.com/skywind3000/asyncrun.vim/) installed.
     To avoid empty lines in the quickfix list, add `let g:asyncrun_trim = 1` to your `vimrc`.
     Other [options](https://github.com/skywind3000/asyncrun.vim/wiki/Options), such as `g:asyncrun_save` might be of interest.
 
