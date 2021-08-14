@@ -5,8 +5,33 @@ You may also use a plug-in manager such as [vim-plug](https://github.com/junegun
 # Usage and Setup
 
 Switch to a compiler by `:compiler ...` and then start it by `:make` or `:lmake`.
-For example, first call `:compiler flake8` to switch to `flake8`, and then lint the current (Python) file by `:lmake`.
-In one go: `:comp flake8 | lmake`.
+For example, first call `:compiler flake8` to switch to `flake8`, and then lint the current (Python) file by `:lmake %:S`.
+In one go: `:comp flake8 | lmake %:S`.
+
+## Convenience Commands
+
+This plug-in provides a command `(L)Compiler` to set the compiler and call it by `(l)make` in one go, for example:
+
+```vim
+LCompiler flake8 %:S
+```
+
+achieves the same as `:comp flake8 | lmake %:S`.
+Everything following its first argument is passed to `(L)Make`.
+
+For faster access to this commands, install [vim-alias](https://github.com/Konfekt/vim-alias) and add aliases such as
+
+```vim
+Alias cm   Compiler
+Alias cmm  Compiler\ %:S<c-b><c-right>
+Alias lcm  LCompiler
+Alias lcmm LCompiler\ %:S<c-b><c-right>
+
+Alias m    Make
+Alias mm   Make\ %:S
+Alias lm   LMake
+Alias lmm  LMake\ %:S
+```
 
 ## Calling a Linter
 
