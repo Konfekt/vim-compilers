@@ -13,8 +13,19 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-" Note: or make sure to add Autohotkey.exe's path to $PATH env. var.
-let &l:makeprg = shellescape($ProgramFiles . '\Autohotkey\autohotkey.exe') . ' /ErrorStdOut'
+if !exists('g:ahk_executable')
+  if executable('autohotkey.exe')
+    let g:ahk_executable = 'autohotkey.exe'
+  else
+    let g:ahk_executable = $ProgramFiles . '\Autohotkey\autohotkey.exe'
+  endif
+endif
+
+if !(executable(g:ahk_executable) || filereadable(g:ahk_executable))
+  echoerr 'To use the Autohotkey linter, please set g:ahk_executable to the path of the autohotkey.exe executable!'
+endif
+
+let &l:makeprg = shellescape(g:ahk_executable) . ' /ErrorStdOut'
 setlocal errorformat=%E%f\ (%l)\ :\ ==>\ %m,%E\\s%#%m,%-G%.%#
 silent CompilerSet makeprg
 silent CompilerSet errorformat
