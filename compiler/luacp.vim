@@ -9,10 +9,6 @@ let g:current_compiler = 'luacp'
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-if exists(':CompilerSet') != 2 " older Vim always used :setlocal
-  command -nargs=* CompilerSet setlocal <args>
-endif
-
 CompilerSet makeprg=luac\ -p
 CompilerSet errorformat=luac:\ %f:%l:\ %m,%-G%.%#
 

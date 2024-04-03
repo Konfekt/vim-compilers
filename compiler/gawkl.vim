@@ -11,10 +11,6 @@ let g:current_compiler = 'gawkl'
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-if exists(':CompilerSet') != 2 " older Vim always used :setlocal
-  command -nargs=* CompilerSet setlocal <args>
-endif
-
 " From https://stackoverflow.com/questions/7165167/are-there-any-awk-syntax-checkers/7212314#7212314
 silent CompilerSet makeprg=gawk\ --lint\ --source\ 'BEGIN{exit(0)}END{exit(0)}'\ --file=
 silent CompilerSet errorformat=%Z%.awk:\ %f:%l:\ %p^\ %m,

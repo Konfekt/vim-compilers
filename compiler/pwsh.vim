@@ -25,10 +25,6 @@ if exists("current_compiler")
 endif
 let current_compiler = "pwsh"
 
-if exists(":CompilerSet") != 2		" older Vim always used :setlocal
-  command -nargs=* CompilerSet setlocal <args>
-endif
-
 if !exists("g:ps1_makeprg_cmd")
   if executable('pwsh')
     " pwsh is the future

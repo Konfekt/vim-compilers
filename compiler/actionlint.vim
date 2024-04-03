@@ -8,10 +8,6 @@ if exists('current_compiler')
 endif
 let current_compiler = 'actionlint'
 
-if exists(':CompilerSet') != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
-
 let s:save_cpo = &cpo
 set cpo-=C
 

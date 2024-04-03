@@ -7,8 +7,6 @@
 if exists('current_compiler') | finish | endif
 let current_compiler = 'latexmk'
 
-CompilerSet makeprg=latexmk\ -latex=pdflatex
-
 " Note: The errorformat assumes we're using the -file-line-error with
 "       [pdf]latex. For more info, see |errorformat-LaTeX|.
 
