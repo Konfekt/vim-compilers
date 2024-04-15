@@ -1,16 +1,12 @@
 " Maintainer: Peter Benjamin
 
 if exists('current_compiler') | finish | endif
-let current_compiler = 'alex'
-
-if exists(':CompilerSet') != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
+let current_compiler = 'vale'
 
 let s:save_cpo = &cpo
 set cpo-=C
 
-let &l:makeprg = 'vale --output=line %'
+let &l:makeprg = 'vale --output=line %:S'
 let &l:errorformat = '%f:%l:%c:%m'
 
 silent CompilerSet makeprg
