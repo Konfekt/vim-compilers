@@ -12,14 +12,14 @@ set cpo&vim
 
 setlocal makeprg=pulp
 
-setlocal errorformat=
-setlocal errorformat+=%-G%*[^\ ])\ %.%#
-setlocal errorformat+=%-G%.%#For\ some\ reason%.%#
-setlocal errorformat+=%W%f:%l-%*[0-9?]:\ %*[^\ ]\ warning:\ %m
-setlocal errorformat+=%E%f:%l-%*[0-9?]:\ %*[^\ ]\ error:\ %m
-setlocal errorformat+=%W%f:%l-%*[0-9?]:\ %m
-setlocal errorformat+=%W%l-%*[0-9?]:\ %m
-setlocal errorformat+=%-G%.%#
+silent CompilerSet errorformat=
+                      \%-G%*[^\ ])\ %.%#
+                      \%-G%.%#For\ some\ reason%.%#
+                      \%W%f:%l-%*[0-9?]:\ %*[^\ ]\ warning:\ %m
+                      \%E%f:%l-%*[0-9?]:\ %*[^\ ]\ error:\ %m
+                      \%W%f:%l-%*[0-9?]:\ %m
+                      \%W%l-%*[0-9?]:\ %m
+                      \%-G%.%#
 
 silent CompilerSet makeprg
 silent CompilerSet errorformat

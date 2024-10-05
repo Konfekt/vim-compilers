@@ -15,10 +15,8 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 setlocal makeprg=mypy\ --show-column-numbers
-setlocal errorformat=%f:%l:%c:\ %t%*[^:]:\ %m
-
 silent CompilerSet makeprg
-silent CompilerSet errorformat
+silent CompilerSet errorformat=%f:%l:%c:\ %t%*[^:]:\ %m
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

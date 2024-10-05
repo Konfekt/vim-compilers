@@ -22,9 +22,10 @@ if !(executable(g:ahk_executable) || filereadable(g:ahk_executable))
 endif
 
 let &l:makeprg = shellescape(g:ahk_executable) . ' /ErrorStdOut'
-setlocal errorformat=%E%f\ (%l)\ :\ ==>\ %m,%E\\s%#%m,%-G%.%#
 silent CompilerSet makeprg
-silent CompilerSet errorformat
+
+" Note: or make sure to add Autohotkey.exe's path to $PATH env. var.
+silent CompilerSet errorformat=%E%f\ (%l)\ :\ ==>\ %m,%E\\s%#%m,%-G%.%#
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

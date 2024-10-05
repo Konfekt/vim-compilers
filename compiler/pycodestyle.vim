@@ -15,10 +15,8 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 setlocal makeprg=pycodestyle
-setlocal errorformat=%f:%l:%c:\ %t%n\ %m
-
 silent CompilerSet makeprg
-silent CompilerSet errorformat
+silent CompilerSet errorformat=%f:%l:%c:\ %t%n\ %m
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

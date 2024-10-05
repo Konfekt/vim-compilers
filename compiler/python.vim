@@ -14,8 +14,13 @@ let current_compiler = "python"
 let s:cpo_save = &cpo
 set cpo&vim
 
-setlocal makeprg=python
-setlocal errorformat=%A\ \ File\ \"%f\"\\\,\ line\ %l\\\,%m,
+if executable('python3')
+  setlocal makeprg=python3
+else
+  setlocal makeprg=python
+endif
+silent CompilerSet makeprg
+silent CompilerSet errorformat=%A\ \ File\ \"%f\"\\\,\ line\ %l\\\,%m,
       \%C\ \ \ \ %.%#,
       \%+Z%.%#Error\:\ %.%#,
       \%A\ \ File\ \"%f\"\\\,\ line\ %l,
@@ -23,6 +28,3 @@ setlocal errorformat=%A\ \ File\ \"%f\"\\\,\ line\ %l\\\,%m,
       \%-C%p^,
       \%Z%m,
       \%-G%.%#
-
-silent CompilerSet makeprg
-silent CompilerSet errorformat

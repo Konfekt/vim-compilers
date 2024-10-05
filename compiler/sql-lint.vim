@@ -10,11 +10,10 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 let &l:makeprg = 'sql-lint'
+silent CompilerSet makeprg
+
 " test/test-files/test.sql:22 [sql-lint: invalid-drop-option] Option 'thing' is not a valid option
 " setlocal errorformat=%f:%l%\ [%*[^%]]]\ %m,%-G%.%#
-let &l:errorformat= '%f:%l %m,'
-      \ . 'sql-lint was unable to lint the following query %s,'
-      \ . '%-G%.%#'
 " "  See https://github.com/joereynolds/sql-lint#output
 " let &l:errorformat =
 "       \ . '%E{,'
@@ -25,8 +24,9 @@ let &l:errorformat= '%f:%l %m,'
 "       \ . '%Z},'
 " 	    \ . '%-G\\s%#'
 
-silent CompilerSet makeprg
-silent CompilerSet errorformat
+silent CompilerSet errorformat=%f:%l\ %m,
+      \sql-lint\ was\ unable\ to\ lint\ the\ following query\ %s,
+      \%-G%.%#
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

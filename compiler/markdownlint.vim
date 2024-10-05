@@ -6,11 +6,8 @@ let current_compiler = "markdownlint"
 let s:cpo_save = &cpo
 set cpo&vim
 
-silent CompilerSet makeprg=markdownlint
-setlocal errorformat=%f:%l:%c\ MD0%n/%m
-setlocal errorformat+=%f:%l\ MD0%n/%m
-setlocal errorformat+=%-G%.%#
-silent CompilerSet errorformat
+silent CompilerSet makeprg=markdownlint\ --config\ $XDG_CONFIG_HOME/markdownlint
+silent CompilerSet errorformat=%f:%l:%c\ MD0%n/%m,%f:%l\ MD0%n/%m,%-G%.%#
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

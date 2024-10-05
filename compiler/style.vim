@@ -36,12 +36,9 @@ if !exists('g:style_ari')
 endif
 
 let &l:makeprg = 'style --print-long ' . g:style_length . ' --print-ari ' . g:style_ari . ' --print-nom --language ' . matchstr(&l:spelllang, '^\a\a')
-setlocal errorformat=
-setlocal errorformat=%f:%l:\ %m
-setlocal errorformat+=%-G%.%#
 
 silent CompilerSet makeprg
-silent CompilerSet errorformat
+silent CompilerSet errorformat=%f:%l:\ %m,%-G%.%#
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
