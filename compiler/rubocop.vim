@@ -14,7 +14,7 @@ let current_compiler = "rubocop"
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=makeprg=rubocop\ --auto-correct
+CompilerSet makeprg=rubocop\ --autocorrect
 CompilerSet errorformat=%f:%l:%c:\ %t:\ %m
 
 let &cpo = s:cpo_save
