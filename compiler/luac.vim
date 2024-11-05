@@ -1,10 +1,10 @@
 " Vim compiler file
-" Compiler: luacp
+" Compiler: luac
 
 if exists('g:current_compiler')
     finish
 endif
-let g:current_compiler = 'luacp'
+let g:current_compiler = 'luac'
 
 let s:save_cpo = &cpoptions
 set cpoptions&vim
