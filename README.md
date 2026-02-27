@@ -10,27 +10,23 @@ In one go: `:comp flake8 | lmake %:S`.
 
 ## Convenience Commands
 
-This plug-in provides a command `(L)Compiler` to set the compiler and call it by `(l)make` in one go, for example:
+This plug-in provides a command `(L)Compiler` to temporarily switch to the compiler and call it by `(l)Make` in one go, for example:
 
 ```vim
 LCompiler flake8 %:S
 ```
 
-achieves the same as `:comp flake8 | lmake %:S`.
+achieves the same as `:comp flake8 | lmake %:S` followed by reverting to the previous compiler options.
 Everything following its first argument is passed to `(L)Make`.
 
 For faster access to this commands, install [vim-alias](https://github.com/Konfekt/vim-alias) and add aliases such as
 
 ```vim
-Alias cm   Compiler
-Alias cmm  Compiler\ %:S<c-b><c-right>
-Alias lcm  LCompiler
-Alias lcmm LCompiler\ %:S<c-b><c-right>
+Alias c   Compiler
+Alias lc  LCompiler\ %:S<c-b><c-right>
 
 Alias m    Make
-Alias mm   Make\ %:S
-Alias lm   LMake
-Alias lmm  LMake\ %:S
+Alias lm  LMake\ %:S
 ```
 
 ## Calling a Linter
@@ -38,7 +34,7 @@ Alias lmm  LMake\ %:S
 For convenience, define in `~/.vim/after/ftplugin/python.vim` a command
 
 ```vim
-command! -buffer -bang Lint compiler flake8 | lmake %:S<bang>
+command! -buffer -bang Lint Compiler<bang> flake8 %:S
 ```
 
 It can then be called to lint the main file by `:Lint`.
@@ -51,7 +47,7 @@ To automatically open the location-list window after linting has finished, add `
 To automatically run `:Lint` after saving the modifications to a source code file, say `Python`, add to `~/.vim/after/ftplugin/python.vim`:
 
 ```vim
-    autocmd BufWrite <buffer=abuf> Lint
+    autocmd BufWrite <buffer=abuf> Lint!
 ```
 
 ## Calling a Compiler
@@ -59,7 +55,7 @@ To automatically run `:Lint` after saving the modifications to a source code fil
 For a compiler command, such as `python`, define in `~/.vim/after/ftplugin/python.vim` a command
 
 ```vim
-command! -buffer -bang Compile compiler python | make<bang>.
+command! -buffer -bang Compile Compiler<bang> python
 ```
 
 that can then be called to compile the main file.
